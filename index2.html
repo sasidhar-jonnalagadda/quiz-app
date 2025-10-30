@@ -25,5 +25,11 @@
     </ul>
     <h2>Good Luck!</h2>
     <button>Start Quiz</button>
+    <script>
+      const name = localStorage.getItem("name");
+      let welcomeEl = document.getElementById("welcome-el");
+
+      welcomeEl.textContent = "Welcome, " + name;
+    </script>
   </body>
 </html>
