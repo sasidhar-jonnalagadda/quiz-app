@@ -13,3 +13,13 @@ const questions = [
   "4) Which planet has the most moons in our solar system (as of 2025)?",
   "5) Who was the first person to reach the South Pole?",
 ];
+
+const options = [
+  "a. Asia\nb. North America\nc. Europe\nd. Antarctica",
+  "a. China\nb. South Korea\nc. India\nd. Japan",
+  "a. Vancouver\nb. Ottawa\nc. Calgary\nd. Toronto",
+  "a. Saturn\nb. Jupiter\nc. Earth\nd. Mercury",
+  "a. Helmer Hanssen\nb. Oscar Wisting\nc. Roald Amundsen\nd. Sverre Hassel",
+];
+
+const answers = ["a", "d", "b", "a", "c"];
