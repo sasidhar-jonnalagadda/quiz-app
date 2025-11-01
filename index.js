@@ -23,3 +23,9 @@ const options = [
 ];
 
 const answers = ["a", "d", "b", "a", "c"];
+
+const startBtn = document.getElementById("start-btn");
+
+startBtn.addEventListener("click", function () {
+  window.location.href = "questions.html";
+});
