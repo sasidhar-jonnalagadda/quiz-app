@@ -6,25 +6,44 @@ submitBtn.addEventListener("click", function () {
   window.location.href = "index2.html";
 });
 
-const questions = [
-  "1) Which is the largest continent in the world?",
-  `2) Which country is known as the "Land of the Rising Sun"?`,
-  "3) What is the capital city of Canada?",
-  "4) Which planet has the most moons in our solar system (as of 2025)?",
-  "5) Who was the first person to reach the South Pole?",
+const quizData = [
+  {
+    question: "1) Which is the largest continent in the world?",
+    options: ["Asia", "North America", "Europe", "Antarctica"],
+    answer: "a",
+  },
+  {
+    question: `2) Which country is known as the "Land of the Rising Sun"?`,
+    options: ["China", "South Korea", "India", "Japan"],
+    answer: "d",
+  },
+  {
+    question: "3) What is the capital city of Canada?",
+    options: ["Vancouver", "Ottawa", "Calgary", "Toronto"],
+    answer: "b",
+  },
+  {
+    question:
+      "4) Which planet has the most moons in our solar system (as of 2025)?",
+    options: ["Saturn", "Jupiter", "Earth", "Mercury"],
+    answer: "a",
+  },
+  {
+    question: "5) Who was the first person to reach the South Pole?",
+    options: [
+      "Helmer Hanssen",
+      "Oscar Wisting",
+      "Roald Amundsen",
+      "Sverre Hassel",
+    ],
+    answer: "c",
+  },
 ];
-
-const options = [
-  "a. Asia\nb. North America\nc. Europe\nd. Antarctica",
-  "a. China\nb. South Korea\nc. India\nd. Japan",
-  "a. Vancouver\nb. Ottawa\nc. Calgary\nd. Toronto",
-  "a. Saturn\nb. Jupiter\nc. Earth\nd. Mercury",
-  "a. Helmer Hanssen\nb. Oscar Wisting\nc. Roald Amundsen\nd. Sverre Hassel",
-];
-
-const answers = ["a", "d", "b", "a", "c"];
 
 const startBtn = document.getElementById("start-btn");
+
+let questionEl = document.getElementById("question-el");
+let optionsEl = document.getElementById("options-el");
 
 startBtn.addEventListener("click", function () {
   window.location.href = "questions.html";
