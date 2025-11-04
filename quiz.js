@@ -32,5 +32,28 @@ const quizData = [
   },
 ];
 
-let questionEl = document.getElementById("question-el");
-let optionsEl = document.getElementById("options-el");
+const questionEl = document.getElementById("question-el");
+const optionsEl = document.getElementById("options-el");
+const choiceEl = document.getElementById("choice-input");
+const nextBtn = document.getElementById("next-btn");
+
+let curr_index = 0;
+let score = 0;
+
+function show_question() {
+  if (curr_index >= quizData.length) {
+    document.body.innerHTML = `<h1>Quiz finished!</h1><h2>Your final score is: ${score}</h2>`;
+    return;
+  }
+
+  const curr_question = quizData[curr_index].question;
+  questionEl.textContent = curr_question;
+
+  optionsEl.innerHTML = "";
+  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[0]}</p>`;
+  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[1]}</p>`;
+  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[2]}</p>`;
+  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[3]}</p>`;
+
+  choiceEl.value = "";
+}
