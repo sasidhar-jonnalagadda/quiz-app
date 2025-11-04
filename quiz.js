@@ -51,9 +51,9 @@ function show_question() {
 
   optionsEl.innerHTML = "";
   optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[0]}</p>`;
-  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[1]}</p>`;
-  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[2]}</p>`;
-  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[3]}</p>`;
+  optionsEl.innerHTML += `<p>b) ${quizData[curr_index].options[1]}</p>`;
+  optionsEl.innerHTML += `<p>c) ${quizData[curr_index].options[2]}</p>`;
+  optionsEl.innerHTML += `<p>d) ${quizData[curr_index].options[3]}</p>`;
 
   choiceEl.value = "";
 }
