@@ -30,6 +30,12 @@
       let welcomeEl = document.getElementById("welcome-el");
 
       welcomeEl.textContent = "Welcome, " + name;
+
+      const startBtn = document.getElementById("start-btn");
+
+      startBtn.addEventListener("click", function () {
+        window.location.href = "questions.html";
+      });
     </script>
   </body>
 </html>

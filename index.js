@@ -40,11 +40,5 @@ const quizData = [
   },
 ];
 
-const startBtn = document.getElementById("start-btn");
-
 let questionEl = document.getElementById("question-el");
 let optionsEl = document.getElementById("options-el");
-
-startBtn.addEventListener("click", function () {
-  window.location.href = "questions.html";
-});
