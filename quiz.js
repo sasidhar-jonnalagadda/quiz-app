@@ -57,3 +57,21 @@ function show_question() {
 
   choiceEl.value = "";
 }
+
+nextBtn.addEventListener("click", function () {
+  const user_answer = choiceEl.value.trim().toLowerCase();
+  const correct_answer = quizData[curr_index].answer;
+
+  if (user_answer === "") {
+    score -= 1;
+  } else if (user_answer === correct_answer) {
+    score += 2;
+  } else {
+    score -= 2;
+  }
+
+  curr_index += 1;
+  show_question();
+});
+
+show_question();
