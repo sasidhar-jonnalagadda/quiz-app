@@ -34,7 +34,6 @@ const quizData = [
 
 const questionEl = document.getElementById("question-el");
 const optionsEl = document.getElementById("options-el");
-const choiceEl = document.getElementById("choice-input");
 const nextBtn = document.getElementById("next-btn");
 
 let curr_index = 0;
@@ -42,7 +41,7 @@ let score = 0;
 
 function show_question() {
   if (curr_index >= quizData.length) {
-    document.body.innerHTML = `<h1>Quiz finished!</h1><h2>Your final score is: ${score}</h2>`;
+    document.body.innerHTML = `<h1>Quiz finished!</h1><h2>Your final score is: ${score}/10</h2>`;
     return;
   }
 
@@ -50,24 +49,27 @@ function show_question() {
   questionEl.textContent = curr_question;
 
   optionsEl.innerHTML = "";
-  optionsEl.innerHTML += `<p>a) ${quizData[curr_index].options[0]}</p>`;
-  optionsEl.innerHTML += `<p>b) ${quizData[curr_index].options[1]}</p>`;
-  optionsEl.innerHTML += `<p>c) ${quizData[curr_index].options[2]}</p>`;
-  optionsEl.innerHTML += `<p>d) ${quizData[curr_index].options[3]}</p>`;
-
-  choiceEl.value = "";
+  optionsEl.innerHTML = `
+  <label><input type="radio" name="option" value="a">a) ${quizData[curr_index].options[0]}</label><br>
+  <label><input type="radio" name="option" value="b">b) ${quizData[curr_index].options[1]}</label><br>
+  <label><input type="radio" name="option" value="c">c) ${quizData[curr_index].options[2]}</label><br>
+  <label><input type="radio" name="option" value="d">d) ${quizData[curr_index].options[3]}</label><br>
+  `;
 }
 
 nextBtn.addEventListener("click", function () {
-  const user_answer = choiceEl.value.trim().toLowerCase();
-  const correct_answer = quizData[curr_index].answer;
+  const user_answer = document.querySelector('input[name="option"]:checked');
 
-  if (user_answer === "") {
+  if (!user_answer) {
     score -= 1;
-  } else if (user_answer === correct_answer) {
-    score += 2;
   } else {
-    score -= 2;
+    const selected_val = user_answer.value;
+    const correct_answer = quizData[curr_index].answer;
+    if (selected_val === correct_answer) {
+      score += 2;
+    } else {
+      score -= 2;
+    }
   }
 
   curr_index += 1;
