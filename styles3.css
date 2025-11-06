@@ -1,12 +1,12 @@
 button {
-  margin-top: 10px;
-  padding: 5px 10px;
   background-color: darkviolet;
   color: #ffffff;
   border: none;
+  border-radius: 3px solid black;
+  margin-top: 5px;
+  padding: 10px 15px;
 }
 
 button:hover {
-  cursor: pointer;
   background-color: purple;
 }
