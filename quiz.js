@@ -41,8 +41,13 @@ let score = 0;
 
 function show_question() {
   if (curr_index >= quizData.length) {
-    document.body.innerHTML = `<h1>Quiz finished!</h1><h2>Your final score is: ${score}/10</h2>`;
-    return;
+    document.body.innerHTML = `<h1>Quiz finished!</h1><h2>Your final score is: ${score}/10</h2><br>`;
+    document.body.innerHTML += `<button id="restart-btn">Restart</button>`;
+
+    const restartBtn = document.getElementById("restart-btn");
+    restartBtn.addEventListener("click", function () {
+      window.location.reload();
+    });
   }
 
   const curr_question = quizData[curr_index].question;
